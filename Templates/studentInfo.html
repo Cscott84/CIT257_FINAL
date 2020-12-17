@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block title %}Student Information{% endblock%}
+{% block header%} Student Schedule {% endblock %}
+
+{% block body %}
+
+<h2>Student Name: {{info.student_name}}</h2>
+<h2>Student ID: {{info.student_id}}</h2>
+<h3>Enrolled Courses: </h3>
+
+<ul>
+    {% for courses in info.sched %}
+    <li>{{courses.course_number}}: {{courses.course_name}}</li>
+    {% endfor %}
+</ul>
+
+
+<form action="studentInfo" method="POST">
+    <p>Search Another S tudent</p>
+    <p>Enter A sudent ID:</p>
+    <input type="text" name="studentId">
+    <input type="submit" value="Search Student">
+
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{%  block title %}Add Student{% endblock %}
+{% block header %}Add New Student{% endblock %}
+
+{% block body %}
+
+
+
+<h2>Add New Student to the College Student Table</h2>
+<p>This student will not initially be enrolled in any courses</p>
+
+<form action="newStudent" method="POST">
+<p><input type="text" name="studentName">
+<label for="studentName">New Student Name</label></p>
+
+<p><input type="email" name="studentEmail">
+<label for="studentEmail">New Student Email</label></p>
+
+<input type="submit" value="Eroll Now">
+</form>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'layout.html'%}
+{% block title %}Home{% endblock %}
+{% block header%} Select A Course{% endblock %}
+
+{% block body%}
+
+
+
+<form action="/courseInfo" method="POST">
+    <select name="courses">
+        <option value="1">PHP</option>
+        <option value="2">Databases</option>
+        <option value="3">Flask Intro</option>
+    </select>
+    <label for="Course">Select a Course</label>
+
+    <input type="submit" value="Submit Course">
+
+</form>
+
+
+
+{% endblock%}

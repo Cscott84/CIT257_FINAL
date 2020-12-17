@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block title%} Student Search {% endblock %}
+{% block header%} Get A Students Schedule {% endblock %}
+
+{% block body %}
+
+<form action="studentInfo" method="POST">
+    <p>Enter A sudent ID:</p>
+    <input type="text" name="studentId">
+    <input type="submit" value="Search Student">
+
+</form>
+
+{%endblock%}

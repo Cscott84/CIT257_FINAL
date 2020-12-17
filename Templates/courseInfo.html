@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block title%}Course Information {% endblock %}
+
+{% block header %}Enrolled Students{% endblock %}
+{% block body %}
+
+
+
+<h2>Course Name: {{course.course_name}}</h2>
+<h2>Course Numnber: {{course.course_number}}</h2>
+
+<h3>Enrolled Students:</h3>
+
+<table class="table table-striped shadow">
+    <tr>
+        <th>ID</th><th>Name</th><th>email</th><th></th>
+    </tr>
+    {% for students in course.student %}
+    <tr>
+        <td>{{students.student_id}}</td><td>{{students.student_name}}</td><td>{{students.email}}</td><td> <a href="/remove?student_id={{students.student_id}}&course_id={{course.course_id}}">Remove from class</a></td>
+    </tr>
+{% endfor %}
+
+</table>
+
+<form action="addroster" method="POST">
+
+<h3> Add student to roster</h3>
+<p><input type="text" value="{{course.course_number}}" readyonly>
+<input type="hidden" name="courseNum" value="{{course.course_id}}">
+<label for="cid">Course ID</label></p>
+
+
+<p><input type="text" name="studentId">
+<label for="StudentId">Enter student ID</label></p>
+<input type="submit" value="add to roster">
+
+
+</form>
+
+
+
+
+
+{% endblock %}
